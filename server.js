@@ -15,13 +15,13 @@ app.use(express.static("public"));
 io.on("connection", (socket) => {
   console.log("Socket connection established", socket.id);
 
-  socket.on("get-data", () => {
+  setInterval(() => {
     socket.emit("data", {
       data: {
         altitude: 10.45,
       },
     });
-  });
+  }, 500);
 });
 
 server.listen(PORT, () => {
