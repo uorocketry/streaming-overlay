@@ -13,7 +13,15 @@ const io = require("socket.io")(server, {
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
-  console.log("Connection established with client");
+  console.log("Socket connection established", socket.id);
+
+  socket.on("get-data", () => {
+    socket.emit("data", {
+      data: {
+        altitude: 10.45,
+      },
+    });
+  });
 });
 
 server.listen(PORT, () => {
