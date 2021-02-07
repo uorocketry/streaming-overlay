@@ -9,6 +9,7 @@ const io = require("socket.io")(server, {
     methods: ["GET", "POST"],
   },
 });
+const dataSimulator = require("./dataSimulator");
 
 app.use(express.static("public"));
 
@@ -17,13 +18,13 @@ io.on("connection", (socket) => {
 
   setInterval(() => {
     socket.emit("data", {
-      data: {
-        altitude: 10.45,
-      },
+      data: dataSimulator.getData(),
     });
-  }, 500);
+  }, 250);
 });
 
 server.listen(PORT, () => {
   console.log("listening on port " + PORT);
 });
+
+dataSimulator.simulate("./log_rocket_6.txt", 33.33);
