@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
     socket.emit("data", {
       data: dataSimulator.getData(),
     });
-  }, 250);
+  }, 100);
 });
 
 server.listen(PORT, () => {
