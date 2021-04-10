@@ -29,8 +29,8 @@ const getData = () => {
   return data;
 };
 
-// parameters: file path, timeout (ms)
-const simulate = async (file, timeout) => {
+// parameters: file path, delay (ms)
+const simulate = async (file, delay) => {
   const fileStream = fs.createReadStream(file);
 
   const rl = readline.createInterface({
@@ -55,7 +55,7 @@ const simulate = async (file, timeout) => {
       data.velocity = values[Indexes.velocity].toString();
     }
 
-    await sleep(33.33);
+    await sleep(delay);
   }
 };
 
