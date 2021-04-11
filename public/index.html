@@ -13,12 +13,19 @@
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 id="altitude"></h1>
-    <h1 id="velocity"></h1>
-    <h1 id="acceleration"></h1>
-    <h1 id="state"></h1>
-    <h1 id="latitude"></h1>
-    <h1 id="longitude"></h1>
+    <main stlye="position: relative;">
+      <div style="position: absolute; right: 0; top: 0">
+        <div class="metric-container">
+          <h1>Altitude</h1>
+          <h1 id="altitude"></h1>
+        </div>
+      </div>
+      <h1 id="velocity"></h1>
+      <!-- <h1 id="acceleration"></h1>
+      <h1 id="state"></h1>
+      <h1 id="latitude"></h1>
+      <h1 id="longitude"></h1> -->
+    </main>
     <script src="telemetry.js"></script>
   </body>
 </html>

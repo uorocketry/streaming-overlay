@@ -24,33 +24,33 @@ socket.on("data", (res) => {
   if (data.altitude) {
     let parsed = parseFloat(data.altitude).toFixed(0);
     previousValidFields.altitude = parsed < 0 ? "0" : parsed;
-    altitude.innerHTML = "Altitude: " + previousValidFields.altitude;
+    altitude.innerHTML = previousValidFields.altitude;
   }
 
   if (data.velocity) {
     let parsed = parseFloat(data.velocity).toFixed(2);
     previousValidFields.velocity = parsed;
-    velocity.innerHTML = "Velocity: " + parsed;
+    velocity.innerHTML = parsed;
   }
 
   if (data.acceleration) {
     let parsed = parseFloat(data.acceleration).toFixed(2);
     previousValidFields.acceleration = parsed;
-    acceleration.innerHTML = "Acceleration: " + parsed;
+    acceleration.innerHTML = parsed;
   }
 
   if (data.state) {
     previousValidFields.state = data.state;
-    state.innerHTML = "State: " + data.state;
+    state.innerHTML = data.state;
   }
 
   if (data.latitude) {
     previousValidFields.latitude = data.latitude;
-    latitude.innerHTML = "Latitude: " + data.latitude;
+    latitude.innerHTML = data.latitude;
   }
 
   if (data.longitude) {
     previousValidFields.longitude = data.longitude;
-    longitude.innerHTML = "Longitude: " + data.longitude;
+    longitude.innerHTML = data.longitude;
   }
 });
